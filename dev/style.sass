@@ -1,0 +1,855 @@
+$ptsans: 'PT Sans', sans-serif
+$title-color: #600
+
+.el-button
+  background: #518600
+  border-radius: 16px
+  box-shadow: 0 2px 0 #3d6401
+  color: white
+  &:hover
+    background-color: #6faf0d
+    box-shadow: 0 2px 0 #538408
+
+.dropdown
+  display: none
+  position: absolute
+  padding: 7px 0
+  list-style: none
+  background: white
+  height: auto
+  border: 1px solid #ac501c
+  z-index: 1000
+
+.container
+  margin: 0 auto
+  padding: 0 15px
+  margin-right: auto; 
+  margin-left: auto 
+  @media (min-width:768px)
+    width: 750px
+  @media (min-width:992px)
+    width: 970px
+  @media (min-width:1200px)
+    width: 1170px
+
+.clearfix:after
+  content: ""
+  display: table
+  clear: both
+
+* 
+  box-sizing: border-box
+
+img
+  border: none
+  vertical-align: top
+  max-width: 100%
+  height: auto
+
+header
+  background: url('../img/header-bg.jpg') no-repeat
+  background-size: cover
+  padding-bottom: 14px
+  @media (max-width: 991px)
+    text-align: center
+  .logo
+    display: inline-block
+    vertical-align: middle
+    float: left
+    margin-top: 27px
+    @media (max-width: 991px)
+      float: none
+    &:hover
+      opacity: .8
+  .banner
+    display: inline-block
+    vertical-align: middle
+    float: right
+    margin-top: 12px
+    @media (max-width: 991px)
+      float: none
+
+.navigation-wrap
+  background: #9e4310
+  margin-bottom: 19px
+  @media (max-width: 1199px)
+    text-align: center
+  .navigation
+    .nav-list
+      float: left
+      margin: 0
+      padding: 0
+      list-style: none
+      font-size: 0
+      @media (max-width: 1199px)
+        float: none
+      li
+        display: inline-block
+        border-right: 1px solid #913b0b
+        &:first-child
+          border-left: 1px solid #913b0b
+        &:hover
+          background: #ac501c
+        &.premium > a, &.free-astro > a, &.articles > a, &.help > a
+          position: relative
+          &:after
+            content: "\f0da"
+            font-family: FontAwesome
+            font-style: normal
+            font-weight: normal
+            text-decoration: inherit
+            color: white
+            position: absolute
+            right: 14px
+        &.premium:hover > .premium-dropdown
+          display: block
+        a
+          display: block
+          padding: 12px 23px
+          text-decoration: none
+          text-transform: uppercase
+          color: white
+          font: 400 16px/24px $ptsans
+          @media (max-width: 991px)
+            font: 400 14px/24px $ptsans
+          @media (max-width: 730px)
+            font: 400 13px/24px $ptsans
+          @media (max-width: 701px)
+            font: 400 12px/24px $ptsans
+          @media (max-width: 671px)
+            padding: 12px 20px
+          @media (max-width: 635px)
+            padding: 12px 23px
+            font: 400 18px/24px $ptsans
+          @media (max-width: 532px)
+            font: 400 17px/24px $ptsans
+          @media (max-width: 512px)
+            font: 400 16px/24px $ptsans
+          @media (max-width: 492px)
+            font: 400 15px/24px $ptsans
+          @media (max-width: 473px)
+            font: 400 14px/24px $ptsans
+          @media (max-width: 452px)
+            font: 400 13px/24px $ptsans
+          @media (max-width: 432px)
+            font: 400 12px/24px $ptsans
+          @media (max-width: 412px)
+            font: 400 16px/24px $ptsans
+          @media (max-width: 324px)
+            font: 400 15px/24px $ptsans
+
+        .premium-dropdown
+          min-width: 202px
+          li
+            border: 0
+            display: block
+            &.daily:hover > .sub-menu
+              display: block
+            &:last-child > a
+              border: 0
+            &:hover
+              background: white
+            a
+              font: 400 13px/30px $ptsans
+              color: #464646
+              text-transform: none
+              padding: 0 0 0 10px
+              border-bottom: 1px solid #e8e8e8
+              margin: 0 7px
+              &:hover
+                background: #c54f0f
+                color: white
+            .sub-menu
+              display: none
+              position: absolute
+              top: 28px
+              left: 200px
+              padding: 7px 0
+              list-style: none
+              background: white
+              min-width: 197px
+              height: auto
+              border: 1px solid #ac501c
+              z-index: 1000
+        &.free-astro:hover > .free-astro-dropdown
+          display: block
+        .free-astro-dropdown
+          min-width: 168px
+          li
+            border: 0
+            display: block
+            &:last-child > a
+              border: 0
+            &:hover
+              background: white
+            a
+              font: 400 13px/30px $ptsans
+              color: #464646
+              text-transform: none
+              padding: 0 10px 0 10px
+              border-bottom: 1px solid #e8e8e8
+              margin: 0 7px
+              &:hover
+                background: #c54f0f
+                color: white
+        &.articles:hover > .articles-dropdown
+          display: block
+        .articles-dropdown
+          min-width: 112px
+          li
+            border: 0
+            display: block
+            &:last-child > a
+              border: 0
+            &:hover
+              background: white
+            a
+              font: 400 13px/30px $ptsans
+              color: #464646
+              text-transform: none
+              padding: 0 10px 0 10px
+              border-bottom: 1px solid #e8e8e8
+              margin: 0 7px
+              &:hover
+                background: #c54f0f
+                color: white
+
+        &.help:hover > .help-dropdown
+          display: block
+        .help-dropdown
+          min-width: 83px
+          li
+            border: 0
+            display: block
+            &:last-child > a
+              border: 0
+            &:hover
+              background: white
+            a
+              font: 400 13px/30px $ptsans
+              color: #464646
+              text-transform: none
+              padding: 0 10px 0 10px
+              border-bottom: 1px solid #e8e8e8
+              margin: 0 7px
+              &:hover
+                background: #c54f0f
+                color: white
+    .admin   
+      float: right
+      margin: 0
+      padding: 0
+      list-style: none
+      @media (max-width: 1199px)
+        float: none
+      li
+        display: inline-block
+        &:hover
+          background: #ac501c
+      a
+        display: block
+        padding: 12px 21px
+        text-decoration: none
+        text-transform: uppercase
+        color: white
+        font: 400 16px/24px $ptsans
+        @media (max-width: 991px)
+          font: 400 14px/24px $ptsans
+        @media (max-width: 730px)
+          font: 400 13px/24px $ptsans
+        @media (max-width: 701px)
+          font: 400 12px/24px $ptsans
+        @media (max-width: 635px)
+          font: 400 18px/24px $ptsans
+        @media (max-width: 532px)
+          font: 400 17px/24px $ptsans
+        @media (max-width: 512px)
+          font: 400 16px/24px $ptsans
+        @media (max-width: 492px)
+          font: 400 15px/24px $ptsans
+        @media (max-width: 473px)
+          font: 400 14px/24px $ptsans
+        @media (max-width: 452px)
+          font: 400 13px/24px $ptsans
+        @media (max-width: 432px)
+          font: 400 12px/24px $ptsans
+        @media (max-width: 412px)
+          font: 400 16px/24px $ptsans
+        @media (max-width: 324px)
+          font: 400 15px/24px $ptsans
+
+.content-wrap
+  border-bottom: 1px solid gainsboro
+  padding-bottom: 26px
+  margin-bottom: 47px
+  .content
+    float: left
+    width: 840px
+    @media (max-width: 992px)
+      width: 100%
+    h2
+      color: $title-color
+      text-transform: uppercase
+      font: 700 24px/1 $ptsans
+      border-bottom: 1px solid gainsboro
+      padding-bottom: 10px
+      margin-bottom: 24px
+      @media (max-width: 992px)
+        text-align: center
+      @media (max-width: 521px)
+        font: 700 22px/1 $ptsans
+      @media (max-width: 479px)
+        font: 700 20px/1 $ptsans
+
+    .reports
+      font-size: 0
+      margin-bottom: 47px
+      @media (max-width: 992px)
+        text-align: center
+      .reports-item
+        display: inline-block
+        vertical-align: top
+        text-decoration: none
+        width: 200px
+        padding: 5px
+        background: #ffe9cf
+        border: 2px solid #ffe9cf
+        margin: 0 10px 10px 0
+        box-sizing: border-box
+        @media (max-width: 449px)
+          width: 162px
+        @media (max-width: 373px)
+          width: 100%
+        &:hover
+          background: white
+          border: 2px solid #ffe9cf
+        img
+          float: left
+          overflow: hidden
+          padding-right: 10px
+        p
+          color: #550101
+          font: 400 15px/16px $ptsans
+          margin: 0
+        span
+          color: #171717
+          font: 400 14px/16px $ptsans
+    .get-lucky-tittle
+      margin-bottom: 18px          
+    .get-lucky
+      background: url('../img/get-lucky-bg.png')
+      background-size: cover
+      padding: 23px 38px 67px 38px
+      @media (max-width: 991px)
+        padding-bottom: 13px
+      @media (max-width: 743px)
+        padding: 23px 0 13px 0
+        text-align: center
+      .get-lucky-item
+        display: inline-block
+        vertical-align: middle
+        text-decoration: none
+        width: 149px
+        height: 97px
+        @media (max-width: 991px)
+          width: 124px
+          height: auto
+        @media (max-width: 768px)
+          width: 128px
+        @media (max-width: 763px)
+          width: 124px
+        @media (max-width: 667px)
+          width: 110px
+        @media (max-width: 539px)
+          width: 124px
+        @media (max-width: 410px)
+          width: 100%
+          margin-bottom: 10px
+          &:last-child
+            margin-bottom: 0
+        img
+          margin: 0 auto
+          display: block
+          @media (max-width: 991px)
+            width: 50%
+          @media (max-width: 410px)
+            width: 30%
+          &:hover
+            opacity: .8        
+        span
+          display: block
+          margin-top: 12px
+          color: #2d2d2d
+          text-transform: uppercase
+          font: 400 16px/18px $ptsans
+          text-align: center
+          @media (max-width: 763px)
+            font: 400 14px/18px $ptsans
+          @media (max-width: 410px)         
+            font: 400 16px/18px $ptsans
+
+    .astro-signs-title
+      margin: 27px 0 32px 0
+    .astro-signs
+      margin-bottom: 18px
+      .astro-signs-list
+        margin: 0 0 22px 0
+        padding: 0
+        list-style: none
+        @media (max-width: 992px)
+          text-align: center
+        .astro-signs-item
+          display: inline-block
+          width: 65px
+          text-align: center
+          opacity: .5
+          &:hover
+            opacity: 1
+          &.active
+            opacity: 1
+          .astro-signs-link
+            display: inline-block
+            text-decoration: none
+            p
+              color: #757575
+              font: 400 13px/22px $ptsans
+              margin: 0
+    .astro-signs-info
+      margin: 0
+      padding: 0
+      list-style: none
+      background-color: white
+      border: 1px solid gainsboro
+      box-shadow: inset 0 0 51px rgba(0, 0, 0, 0.1)
+      .signs-info-item
+        display: none
+        &.active
+          display: block
+        p
+          margin: 8px 0 0 0
+          color: #252525
+          font: 400 14px/22px $ptsans
+        .see-more
+          color: #9e4310
+          font: 400 14px/22px $ptsans
+          text-decoration: none
+          &:after
+            content: "\f138"
+            font-family: FontAwesome
+            font-style: normal
+            font-weight: bold
+            text-decoration: inherit
+            padding-left: 7px
+          &:hover
+            opacity: .8
+        .signs-tab
+          margin: 0
+          padding: 5px 0 0 0
+          list-style: none
+          width: 145px
+          float: left
+          @media (max-width: 610px)
+            float: none
+            width: 100%
+            text-align: center
+          .signs-tab-item
+            margin-bottom: 5px
+            opacity: .7
+            @media (max-width: 610px)
+              display: inline-block
+            &.active
+              opacity: 1
+            &:hover
+              opacity: 1
+            .signs-tab-link
+              display: block
+              text-decoration: none
+              text-transform: uppercase
+              background: #518600
+              padding: 11px 45px
+              color: white
+              font: 400 16px/24px $ptsans
+              @media (max-width: 610px)
+                display: inline-block
+              &:hover
+                background: #64a304
+        .signs-tab-list
+          margin: 0
+          padding: 0px 21px 0px 0px
+          list-style: none
+          float: right
+          width: 650px
+          @media (max-width: 992px)
+            width: 550px
+          @media (max-width: 768px)
+            width: 423px
+          @media (max-width: 610px)
+            width: 100%
+            padding: 0px 21px 10px 21px
+          .signs-list-item
+            display: none
+            &.active
+              display: block
+
+  .sidebar
+    float: right
+    width: 270px
+    margin-top: 22px
+    @media (max-width: 1199px)
+      float: none
+      width: 100%
+    img
+      margin-bottom: 14px
+    .date-block-wrap
+      @media (max-width: 1199px)
+        text-align: center
+      .date-block
+        @media (max-width: 1199px)
+          width: 270px
+          display: inline-block
+        h3
+          color: $title-color
+          text-transform: uppercase
+          font: 700 16px/1 $ptsans
+          margin: 0 0 16px 0
+          width: 175px
+          @media (max-width: 1199px)
+            width: 100%
+        .predict-list
+          margin: 0 0 17px 0
+          padding: 9px 0
+          list-style: none
+          border-top: 1px solid #e8e8e8
+          border-bottom: 1px solid #e8e8e8
+          li
+            display: inline-block
+            width: 132px
+            color: #2c2c2c
+            font: 400 14px/22px $ptsans
+            span
+              color: #9e4310
+              font-weight: 700
+        .change-date-btn
+          display: inline-block
+          text-decoration: none
+          text-align: center
+          padding: 5px 43px
+          text-transform: uppercase
+          font: 400 16px/24px $ptsans
+          margin-bottom: 28px
+    form
+      text-align: center
+      border: 1px solid #e8e8e8
+      margin-bottom: 29px
+      p
+        color: white
+        text-transform: uppercase
+        font: 400 16px/1 $ptsans
+        background: #b64100
+        padding: 14px 0
+        margin: 0 0 26px 0
+      span
+        font: 400 14px/15px $ptsans
+      .form-field
+        &.name-field
+          margin-bottom: 16px
+        &.email-field
+          margin-bottom: 15px
+        input
+          width: 241px
+          height: 35px
+          background-color: white
+          border: 1px solid gainsboro
+          padding-left: 17px
+          color: #656565
+          font: 400 14px/15px $ptsans
+          outline: none
+          box-sizing: border-box
+      .radio-wrap
+        margin: 0 0 16px 15px
+        text-align: left
+        @media (max-width: 1199px)
+          text-align: center
+          margin-left: 0
+        .gender-label
+          margin-right: 25px
+        .radio-btn
+          display: inline-block
+          margin-right: 10px
+          color: #656565
+          font: 400 15px/1 $ptsans
+          .radio
+            vertical-align: top
+            width: 17px
+            height: 17px
+            margin: 0 3px 0 0
+          .radio + label 
+            cursor: pointer
+            color: #7f7f7f
+          .radio:not(checked)
+            position: absolute
+            opacity: 0
+          .radio:not(checked) + label
+            position: relative
+            padding: 0 0 0 25px
+          .radio:not(checked) + label:before 
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 17px
+            height: 17px
+            background-color: #faf9f9
+            border: 1px solid gainsboro
+            box-shadow: 0 0 10px rgba(0,0,0,0.2)
+            border-radius: 50%
+          .radio:not(checked) + label:after
+            content: ''
+            position: absolute
+            top: 4px
+            left: 4px
+            width: 11px
+            height: 11px
+            border-radius: 50%
+            background: #b24406
+            opacity: 0
+            transition: all .2s
+            box-shadow: inset 0 -3px 5px rgba(0,0,0,0.5),
+            inset 1px 1px 4px rgba(255,255,255,1)
+          .radio:checked + label:after 
+            opacity: 1
+          .radio:focus + label:before 
+          input[type="radio"]:checked + label
+            color: black
+      
+      .dropdown-wrap
+        margin-bottom: 19px
+        .date-title
+          display: block
+          margin: 0 0 10px 15px
+          text-align: left
+          @media (max-width: 1199px)
+            text-align: center
+            margin-left: 0
+        .custom-dropdown
+          position: relative
+          display: inline-block
+          vertical-align: middle
+        .custom-dropdown select
+          outline: none
+          background-color: white
+          font-size: inherit
+          padding: 4px
+          padding-right: 29px
+          margin: 0
+          text-indent: 0.01px
+          text-overflow: ''
+          -webkit-appearance: button
+          border: 1px solid gainsboro
+          color: #656565
+          font: 400 15px/1 $ptsans
+        .custom-dropdown::before,
+        .custom-dropdown::after
+          content: ""
+          position: absolute
+          pointer-events: none
+        .custom-dropdown::after /*  Custom dropdown arrow */
+          content: "\25BC"
+          height: 1em
+          font-size: .700em
+          line-height: 1
+          right: 6px
+          top: 52%
+          margin-top: -.5em
+          color: white
+        .custom-dropdown::before /*  Custom dropdown arrow cover */
+          width: 21px
+          right: 0
+          top: 0
+          bottom: 0
+        .custom-dropdown select[disabled]
+          color: rgba(0,0,0,.3)
+        .custom-dropdown select[disabled]::after
+          color: rgba(0,0,0,.1)
+        .custom-dropdown::before
+          background: #d0d0d0
+      .terms
+        color: black
+        display: block
+        margin-bottom: 17px
+        a
+          color: #518600
+          font-weight: bold
+          text-decoration: none
+      .next-btn
+        width: 185px
+        height: 33px
+        border: 0
+        margin-bottom: 26px
+        text-transform: uppercase
+        outline: none
+
+    .links-block
+      background: white
+      border: 1px solid #e8e8e8
+      margin-bottom: 9px
+      @media (max-width: 1199px)
+        text-align: center
+      &:last-child
+        margin-bottom: 0
+      .links-item
+        display: inline-block
+        vertical-align: top
+        width: 86px
+        text-align: center
+        padding: 9px 0
+        img
+          display: inline-block
+          margin: 0
+          width: 66px
+          height: 51px
+        a
+          display: inline-block
+          color: #202020
+          font: 400 14px/16px $ptsans
+          text-decoration: none
+          &:hover
+            color: #730808
+            text-decoration: underline
+
+footer
+  .footer-top-wrap
+    background: url('../img/footer-top-bg.png')
+    background-size: cover
+    @media (max-width: 747px)
+      text-align: center
+    @media (max-width: 549px)
+      padding-bottom: 10px
+    .footer-top-list
+      display: inline-block
+      vertical-align: top
+      margin-right: 37px
+      @media (max-width: 1199px)
+        margin-right: 11px
+      @media (max-width: 991px)
+        margin-right: 43px
+      @media (max-width: 747px)
+        margin-right: 23px
+        text-align: left
+      @media (max-width: 684px)
+        margin-right: 16px
+      @media (max-width: 596px)
+        margin-right: 0
+      @media (max-width: 549px)
+        display: block
+        text-align: center
+      &:last-child
+        margin-right: 0
+      h3
+        color: #730808
+        text-transform: uppercase
+        font: 700 18px/1 $ptsans
+        margin: 0 0 13px 0
+        @media (max-width: 596px)
+          font: 700 16px/1 $ptsans
+        @media (max-width: 549px)
+          font: 700 20px/1 $ptsans
+      ul
+        margin: 0 0 28px 0
+        padding: 0
+        list-style: none
+        li
+          margin-bottom: 13px
+          &:before
+            content: "\f100"
+            font-family: FontAwesome
+            font-style: normal
+            font-weight: bold
+            text-decoration: inherit
+            color: #518600
+          a
+            padding-left: 9px
+            color: #252525
+            font: 400 15px/1 $ptsans
+            text-decoration: none
+            @media (max-width: 1199px)
+              font: 400 13px/1 $ptsans
+            @media (max-width: 991px)
+              font: 400 15px/1 $ptsans
+            @media (max-width: 666px)
+              font: 400 13px/1 $ptsans
+            @media (max-width: 549px)
+              font: 400 18px/1 $ptsans
+            &:hover
+              color: #518600
+              text-decoration: underline
+  
+  .footer-down-wrap
+    background: #730808
+    @media (max-width: 1199px)
+      padding-bottom: 35px
+    .copyright
+      float: left
+      width: 242px
+      padding-top: 52px
+      margin-right: 58px
+      @media (max-width: 768px)
+        margin-right: 4px
+      @media (max-width: 991px)
+        width: 100%
+        padding-top: 30px
+        margin-right: 0
+        text-align: center
+      span
+        color: white
+        font: 400 15px/24px $ptsans 
+        display: block
+        margin-bottom: 12px
+        @media (max-width: 768px)
+          font: 400 13px/22px $ptsans
+        &:last-child
+          margin-bottom: 0
+    .footer-down-nav
+      float: left
+      padding-top: 56px
+      @media (max-width: 991px)
+        padding-top: 12px
+        float: none
+        text-align: center
+      .footer-list
+        margin: 0
+        padding: 0
+        list-style: none
+        border-top: 1px solid #660404
+        border-bottom: 1px solid #660404
+        &.footer-up-list
+          margin-bottom: 20px
+          li
+            padding: 6px 27px 9px 0
+        &.footer-down-list li
+          padding: 6px 49px 9px 0
+          @media (max-width: 991px)
+            padding-right: 30px
+        li
+          display: inline-block
+          &:last-child
+            padding-right: 0
+          a
+            color: white
+            font: 400 15px/22px $ptsans
+            text-decoration: none
+            @media (max-width: 768px)
+              font: 400 13px/22px $ptsans
+            &:hover
+              color: #ffe790    
+    .fb-widget
+      float: right
+      padding-top: 17px
+      width: 237px
+      @media (max-width: 1199px)
+        display: none
+      @media (max-width: 991px)
+        display: block
+        float: none
+        margin: 0 auto
+
